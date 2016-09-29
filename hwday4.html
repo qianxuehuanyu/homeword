@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width:20px;height:20px;
+            border-radius: 5px;
+            border:1px solid #999;
+            display: inline-block;
+            float:left;margin: 4px;
+        }
+        #box{
+            width:300px;
+            height:300px;
+            border: 1px solid #111;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<div onclick="change()">...</div>
+<p>点击颜色较浅的方块，右上角的...按钮为刷新</p>
+<script>
+var inbox=document.getElementById("box");
+function aa(){
+    for(var i=0;i<100;i++){
+        var inb_div=document.createElement("div");
+        inb_div.id="inb"+i;
+        inbox.appendChild(inb_div);
+    }}
+aa();
+var front_indiv=0;
+var incolor=["red","black","green","yellow","blue","pink","orange","gold"];
+function change(){
+    var indiv=parseInt(Math.random()*100);
+    var change_color=parseInt(Math.random()*8);
+    var all_change=inbox.getElementsByTagName("div");
+    all_change[front_indiv].style.opacity="1";
+    for(var i=0;i<100;i++){
+       all_change[i].style.background=incolor[change_color];
+        console.log(incolor[change_color]);
+        if (i==indiv){
+            all_change[i].style.opacity="0.7";
+            front_indiv=indiv;
+            console.log("0");
+            all_change[i].onclick=function(){
+                alert("bingo!");
+                change();
+            }
+        }else{
+            all_change[i].onclick=function(){
+                alert("lost!");
+                change();
+            }
+        }
+    }
+}
+change();
+</script>
+</body>
+</html>
