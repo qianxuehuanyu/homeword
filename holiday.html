@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="one" onclick="getchange(this)">111111</button>
+<button id="two" onclick="getchange(this)">22222</button>
+<button id="three" onclick="getchange(this)">33333</button>
+<script>
+var ontext=["11111","22222","33333","11231","222131","311323","133211","223412","331233","1223123","3212321"];
+    function getchange(obj){
+        var innum=parseInt(Math.random()*11);
+        obj.innerHTML=ontext[innum];
+        console.log(innum);
+    }
+</script>
+</body>
+</html>
