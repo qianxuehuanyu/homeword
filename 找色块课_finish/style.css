@@ -1,0 +1,9 @@
+
+
+#backgroundView {
+    width: 400px;
+    height: 400px;
+    background: #bfbfbf;
+    border: 2px solid #858585;
+    margin: 0 auto;
+}
