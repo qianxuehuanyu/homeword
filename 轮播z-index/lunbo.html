@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        .box{
+            width: 600px;
+            height:360px;
+            margin: 50px auto;
+            position: relative;
+            /*overflow: hidden;*/
+        }
+        .box img{
+            width:600px;
+            height:360px;
+        }
+        .box a{
+            width: 60px;
+            height:60px;
+            text-align: center;
+            line-height: 60px;
+            color: white;
+            font-weight: 900;
+            font-size: 30px;
+            display: block;
+            top:150px;
+            border-radius:30px ;
+            position: absolute;
+            z-index: 100;
+        }
+        .box a:hover{
+            background-color: #bfbfbf;
+            opacity: 0.5;
+            cursor: pointer;
+            color:#333;
+        }
+        .box .box_left{
+            left:0px;
+        }
+        .box .box_right{
+            right:0px;
+        }
+        .box span:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<!--
+* 轮播图
+* 界面：
+*     1.图片内容
+*     2.上一页 下一页切换的部分
+*     （3.页面指示的圆点）
+*     （4.切换的效果）
+*     （5.鼠标到轮播图中 停止定时器 鼠标移除的时候开启）
+*     （6.点击轮播图 调到指定页面）
+*
+* 逻辑：
+*     自动播放：
+*           1.一排图片 依次显示在 轮播图的内容上 其他超出的部分隐藏
+*           2.当到最后一个图片的时候  切换到第一张
+*     按钮控制：
+*           1.下一张 ++
+*           2.上一张 --
+*           （当到0或者最后一张的时候判断）
+-->
+<body>
+<div class="box" id="lunbo">
+    <a class="box_left" onclick="front()"> < </a>
+    <a class="box_right" onclick="next()"> >  </a>
+    <img src="img/one1.jpg"/>
+    <img src="img/one2.jpg"/>
+    <img src="img/one3.jpg"/>
+    <img src="img/one4.jpg"/>
+    <img src="img/one5.jpg"/>
+    <img src="img/one6.jpg"/>
+    <img src="img/one7.jpg"/>
+    <img src="img/one8.jpg"/>
+    <img src="img/one9.jpg"/>
+</div>
+<script src="onin.js"></script>
+<script src="frontandnext.js"></script>
+<script src="control.js"></script>
+</body>
+</html>
