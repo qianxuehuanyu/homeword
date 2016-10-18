@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.min.js"></script>
+    <style>
+
+        #in_show{
+            width: 400px;
+            height: 106px;
+            border:2px solid red;
+            margin-top:10px;
+            position: relative;
+        }
+        #in_textshow{
+            width: 400px;
+            height: 106px;
+            border:2px solid red;
+            margin-top:10px;
+            position: relative;
+        }
+        #show{
+            margin-top:10px;
+        }
+        #text_show{
+            margin-top:10px;
+        }
+        a{
+            width:20px;
+            height:20px;
+            font:normal  bold 10px/20px "微软雅黑" ;
+            border:1px solid #f60;
+            color:#f60;
+            text-align: center;
+            display:inline-block;
+            margin: 2px;
+        }
+        a:hover{
+            background-color: #f60;
+            color:white;
+            cursor: pointer;
+        }
+        .tabchange{
+            position: absolute;
+            right:2px;bottom:2px;
+        }
+        .fide{
+            position: absolute;
+            right:2px;top:2px;
+        }
+        #text_input{
+            width:200px;
+            height:20px;
+            padding:2px 5px;
+            border:1px solid black;
+            overflow: hidden;
+        }
+        .delete{
+            position: absolute;
+            right:2px;top:25px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <label>用户名：</label>
+        <div id="text_input"></div>
+        <button id="text_show">软键盘</button>
+        <div id="in_textshow">
+            <div id="text_one"></div>
+            <div id="text_two"></div>
+            <div id="text_three"></div>
+            <div id="text_four"></div>
+            <button onclick="tabChange(this)" class="tabchange" value="text">大小写</button>
+            <button id="textchangefide" class="fide">切换键盘</button>
+            <button class="delete" onclick="textdelete()" >删除</button>
+        </div>
+    </div>
+
+    <div>
+        <label>密码：</label>
+        <input id="password" type="password"/>
+        <button id="show">软键盘</button>
+        <div id="in_show">
+            <div id="line_one"></div>
+            <div id="line_two"></div>
+            <div id="line_three"></div>
+            <div id="line_four"></div>
+            <button onclick="tabChange(this)" class="tabchange"value="line">大小写</button>
+            <button id="changefide" class="fide">切换键盘</button>
+            <button class="delete" onclick="indelete()">删除</button>
+        </div>
+    </div>
+<script src="main.js"></script>
+</body>
+</html>
